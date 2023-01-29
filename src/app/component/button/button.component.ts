@@ -16,6 +16,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Parcours du tableau des excuses et envoi d'un message selon un random index
   getExcuse(){
     this.excuseService.getAllExcuse().subscribe((excuses: Excuse[]) => {
       if(excuses && excuses.length > 0){

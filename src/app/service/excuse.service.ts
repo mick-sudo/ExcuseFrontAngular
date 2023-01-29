@@ -16,6 +16,7 @@ import { Observable } from "rxjs";
     constructor(private http: HttpClient) { }
 
 
+    //Recuperation des données
     getAllExcuse(): Observable<Excuse[]>{
         console.log(this.http.get<Excuse[]>(`${this.baseURL}/allExcuses`));
         return this.http.get<Excuse[]>(`${this.baseURL}/allExcuses`)

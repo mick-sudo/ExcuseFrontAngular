@@ -16,6 +16,7 @@ export class HttpMessageComponent implements OnInit {
   constructor(private excuseService: ExcuseService,
     private route: ActivatedRoute) { }
 
+  //Récuperation du httpCode
   ngOnInit(): void {
     const code = this.route.snapshot.paramMap.get('httpCode');
     if(code){
@@ -24,6 +25,7 @@ export class HttpMessageComponent implements OnInit {
     this.getHttpMessage();
   }
 
+  //Parcours du tableau des excuses et envoi du message si http correspondant
   getHttpMessage(){ this.excuseService.getAllExcuse().subscribe((excuses: Excuse[]) => {
       const excuse = excuses.find(e => 
         e.http_code === this.httpCode
