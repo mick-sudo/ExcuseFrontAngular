@@ -9,6 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpMessageComponent } from './component/http-message/http-message.component';
 import { LostComponent } from './component/lost/lost.component';
 import { Erreur404Component } from './component/erreur404/erreur404.component';
+import { ModalformComponent } from './component/modalform/modalform.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,11 +24,17 @@ import { Erreur404Component } from './component/erreur404/erreur404.component';
     HttpMessageComponent,
     LostComponent,
     Erreur404Component,
+    ModalformComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  exports:[
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

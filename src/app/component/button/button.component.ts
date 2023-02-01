@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Excuse } from 'src/app/model/Excuse';
 import { ExcuseService } from 'src/app/service/excuse.service';
+import { ModalformComponent } from '../modalform/modalform.component';
+
 
 @Component({
   selector: 'app-button',
@@ -11,7 +14,8 @@ export class ButtonComponent implements OnInit {
 
   @Output() message = new EventEmitter<string>();
 
-  constructor(private excuseService: ExcuseService) { }
+  constructor(private excuseService: ExcuseService,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +28,10 @@ export class ButtonComponent implements OnInit {
         this.message.emit(excuses[index].message);
       }
     })
+  }
+
+  addExcuse(){
+    this.modalService.open(ModalformComponent,{windowClass: 'app-modalform',
+    centered: true});
   }
 }

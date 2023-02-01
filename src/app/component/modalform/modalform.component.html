@@ -1,0 +1,20 @@
+<div class="form-group">
+  <form [formGroup]="excuseForm" class="form-card">
+    <div class="form-group">
+      <label for="http_code">http_code</label>
+      <input id="http_code" type="text" formControlName="http_code" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="tag">tag</label>
+        <input id="tag" type="text" formControlName="tag" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="message">Message</label>
+        <input id="message" type="text" formControlName="message" class="form-control">
+    </div>
+    <div class="action-buttons">
+        <button (click)="onSubmitForm()" type="submit" class="btn btn-primary">Enregistrer</button>
+    </div>
+  </form>
+</div>
+
